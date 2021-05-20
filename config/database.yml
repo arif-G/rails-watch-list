@@ -24,7 +24,7 @@ default: &default
 development:
   <<: *default
   # database: rails_watch_list_development
-  DATABASE_URL="postgres://arif:123456@localhost/watchlist"
+  url: "postgres://arif:password@localhost:5432/watchlist"
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
@@ -58,7 +58,7 @@ development:
 test:
   <<: *default
   #database: rails_watch_list_test
-  DATABASE_URL="postgres://arif:123456@localhost/watchlist-test"
+  url: "postgres://arif:password@localhost:5433/watchlist-test"
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
 # ever seen by anyone, they now have access to your database.
@@ -81,6 +81,6 @@ test:
 #
 production:
   <<: *default
-  DATABASE_URL="postgres://arif:123456@localhost/watchlist"
+  url: "postgres://arif:password@localhost/watchlist"
   #username: rails_watch_list
   #password: <%= ENV['RAILS_WATCH_LIST_DATABASE_PASSWORD'] %>
