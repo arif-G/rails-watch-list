@@ -1,0 +1,10 @@
+<h2>
+  Add a bookmark to this list
+</h2>
+
+<%= simple_form_for bookmark, url: list_bookmarks_path(list_id), html: { class: "form"} do |f| %>
+  <%= f.input :comment %>
+  <%= f.association :movie %>
+  <%= f.hidden_field :list_id, value: list_id %>
+  <%= f.button :submit, class:"button"%>
+<% end %>

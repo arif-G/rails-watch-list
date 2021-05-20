@@ -1,0 +1,8 @@
+<header>
+
+  <div class="logo"><div class="logo-icon"></div>watchlist</div>
+  <div class="nav">
+    <%= link_to "My lists", lists_path, class: "navlink" %>
+    <%= render 'components/button', label: "New list", path: new_list_path %>
+  </div>
+</header>

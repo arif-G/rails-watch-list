@@ -1,0 +1,9 @@
+<h1>Your lists</h1>
+
+<div class="list-container">
+  <% @lists.each do |list| %>
+    <%= link_to list_path(list) do %>
+      <%= render 'components/list-card', list: list %>
+    <% end %>
+  <% end %>
+</div>

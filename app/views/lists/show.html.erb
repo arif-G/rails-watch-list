@@ -1,0 +1,8 @@
+
+<h1><%= @list.name %></h1>
+<div class="movie-list_container">
+  <% @list.bookmarks.each do |bookmark| %>
+    <%= render 'components/movie-card', bookmark: bookmark %>
+  <% end %>
+</div>
+<%= render 'bookmarks/form', bookmark: @new_bookmark, list_id: @list.id %>
