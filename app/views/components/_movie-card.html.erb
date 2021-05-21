@@ -4,7 +4,7 @@
     <div class="movie-card_headline">
       <h2><%= bookmark.movie.title %></h2>
        - <span class="movie-card_rating"> <%= bookmark.movie.rating %></span></div>
-    <p class="movie-card_overview"><%= bookmark.movie.overview %></p>
+    <p class="movie-card_overview"><%= truncate(bookmark.movie.overview, length: 250, omission: '...') %></p>
     <div class="movie-card_footer"><span class="movie-card_comment"><%= bookmark.comment %></span> <%= link_to "delete", bookmark_path(bookmark), method: :delete, class: "movie-card_delete"  %></div>
   </div>
 </div>
