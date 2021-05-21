@@ -1,3 +1,6 @@
+require 'json'
+require 'open-uri'
+
 class BookmarksController < ApplicationController
   def new
     @bookmark = Bookmark.new
@@ -24,6 +27,12 @@ class BookmarksController < ApplicationController
     @bookmark.destroy
 
     redirect_to list_path(@list)
+  end
+
+  def getMovie
+    res = open("http://tmdb.lewagon.com/search/movie?#{params[:query]}").read
+    movies = JSON.parse(res)
+    render json: movies
   end
 
   private

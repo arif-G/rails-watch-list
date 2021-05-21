@@ -1,6 +1,8 @@
-<h2>
+<h3>
   Add a bookmark to this list
-</h2>
+</h3>
+
+<input type="text" name="search" id="search" oninput="search()">
 
 <%= simple_form_for bookmark, url: list_bookmarks_path(list_id), html: { class: "form"} do |f| %>
   <%= f.input :comment %>
@@ -8,3 +10,14 @@
   <%= f.hidden_field :list_id, value: list_id %>
   <%= f.button :submit, class:"button"%>
 <% end %>
+
+<script>
+  async function search(){
+    const query = document.querySelector('#search').value;
+    console.log(query);
+    const res = await fetch(`/movies/search?query=${query}`)
+    const movie = await res.json()
+    console.log(movie)
+  }
+
+</script>
